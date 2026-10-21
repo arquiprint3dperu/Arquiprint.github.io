@@ -3,254 +3,266 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tu Marca 3D — Impresión 3D en Lima</title>
-<meta name="description" content="Impresión 3D a medida: repuestos, prototipos, organizadores y regalos personalizados. Pide tu cotización por WhatsApp.">
+<title>Arquiprint Perú 3D — Soluciones en fabricación aditiva</title>
+<meta name="description" content="Impresión 3D de maquetas, prototipos y piezas funcionales en Lima, con envíos a todo el Perú. Cotiza por WhatsApp.">
+<meta property="og:title" content="Arquiprint Perú 3D — Soluciones en fabricación aditiva">
+<meta property="og:description" content="Convertimos tu diseño en una pieza real, capa a capa.">
+<meta property="og:image" content="https://arquiprint3dperu.github.io/img/imagotipo-vertical.png">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
+/* Paleta oficial del manual de marca */
 :root{
-  --tinta:#17212B; --papel:#F0F3F2; --filamento:#12A094; --filamento-oscuro:#0B6F66;
-  --naranja:#FF6A2B; --gris:#5B6772; --linea:#D5DCDA; --blanco:#FFFFFF;
-  --titulos:"Bricolage Grotesque","Trebuchet MS",sans-serif;
-  --texto:"DM Sans","Segoe UI",Arial,sans-serif;
+  --naranja:#FF6A2B; --marino:#0A2D52; --medio:#356493; --grisaceo:#899BAF; --gris:#586169; --blanco:#FFFFFF;
+  --suave:rgba(137,155,175,.12); --linea:rgba(137,155,175,.45);
+  --fuente:"Poppins","Segoe UI",Arial,sans-serif;
 }
 *{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth}
-body{font-family:var(--texto);background:var(--papel);color:var(--tinta);line-height:1.6;font-size:17px}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font-family:var(--fuente);font-weight:400;background:var(--blanco);color:var(--gris);line-height:1.5;font-size:16px}
+img{max-width:100%;height:auto;display:block}
 a{color:inherit}
-:focus-visible{outline:3px solid var(--naranja);outline-offset:3px}
-.contenedor{width:min(1120px,92%);margin-inline:auto}
-h1,h2,h3{font-family:var(--titulos);line-height:1.08;letter-spacing:-.02em}
-h2{font-size:clamp(1.8rem,4vw,2.7rem);margin-bottom:.6rem}
-section{padding:5rem 0}
-.sub{color:var(--gris);max-width:56ch}
-
-/* Cabecera */
-header{position:sticky;top:0;z-index:10;background:rgba(240,243,242,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--linea)}
-.barra{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.8rem 0;flex-wrap:wrap}
-.logo{font-family:var(--titulos);font-weight:700;font-size:1.25rem;text-decoration:none}
-nav{display:flex;gap:1.4rem;flex-wrap:wrap}
-nav a{text-decoration:none;font-weight:500;font-size:.95rem;color:var(--gris)}
-nav a:hover{color:var(--tinta)}
+:focus-visible{outline:3px solid var(--medio);outline-offset:3px}
+.wrap{width:min(1120px,92%);margin-inline:auto}
+h1,h2,h3{font-weight:700;color:var(--marino);line-height:1.2}
+h2{font-size:clamp(1.6rem,3.6vw,2.3rem);margin-bottom:.6rem}
+h3{font-size:1.1rem;margin-bottom:.4rem}
+.sub{font-weight:500;color:var(--marino);max-width:60ch;margin-bottom:2rem}
+section{padding:4.5rem 0}
+.alt{background:var(--suave)}
+.regla{display:flex;align-items:center;gap:1rem;margin-bottom:1.2rem}
+.regla::before{content:"";width:48px;height:2px;background:var(--gris)}
+.regla span{font-weight:500;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--medio)}
 
 /* Botones */
-.btn{display:inline-block;padding:.85rem 1.5rem;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid var(--tinta);transition:transform .15s,background .15s}
-.btn:hover{transform:translateY(-2px)}
-.btn-primario{background:var(--tinta);color:var(--blanco)}
+.btn{display:inline-block;padding:.8rem 1.5rem;border-radius:999px;font-weight:500;text-decoration:none;border:2px solid var(--marino);transition:background .15s,color .15s,transform .15s}
+.btn-p{background:var(--marino);color:var(--blanco)}
+.btn-p:hover{background:var(--medio);border-color:var(--medio)}
+.btn-s{color:var(--marino);background:transparent}
+.btn-s:hover{background:var(--marino);color:var(--blanco)}
 .btn-wa{background:var(--naranja);border-color:var(--naranja);color:var(--blanco)}
-.btn-borde{background:transparent}
+.btn-wa:hover{transform:translateY(-2px)}
+.btn-c{background:var(--blanco);color:var(--marino);border-color:var(--blanco)}
+.btn-c:hover{background:transparent;color:var(--blanco)}
+.btn-o{background:transparent;color:var(--blanco);border-color:var(--blanco)}
+.btn-o:hover{background:var(--blanco);color:var(--marino)}
 
-/* Intro con pieza que se imprime por capas */
-.intro{padding:4.5rem 0 5rem}
-.intro .contenedor{display:grid;grid-template-columns:1.15fr .85fr;gap:3rem;align-items:center}
-.intro h1{font-size:clamp(2.4rem,6.4vw,4.6rem);margin-bottom:1.2rem}
-.intro p{font-size:1.15rem;color:var(--gris);max-width:46ch;margin-bottom:1.8rem}
+/* Cabecera */
+header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.96);border-bottom:1px solid var(--linea)}
+.barra{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.7rem 0;flex-wrap:wrap}
+.marca{display:flex;align-items:center;gap:.8rem;text-decoration:none}
+.marca img:first-child{height:44px;width:auto}
+.marca img:last-child{height:30px;width:auto}
+nav{display:flex;align-items:center;gap:1.4rem;flex-wrap:wrap}
+nav a:not(.btn){text-decoration:none;font-weight:500;font-size:.9rem}
+nav a:not(.btn):hover{color:var(--marino)}
+nav .btn{padding:.5rem 1.1rem;font-size:.9rem}
+
+/* Inicio */
+.inicio{padding:4rem 0 4.5rem}
+.inicio .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center}
+.inicio h1{font-size:clamp(2rem,5vw,3.4rem);margin-bottom:1.2rem}
+.inicio p{font-size:1.1rem;max-width:46ch;margin-bottom:1.8rem}
 .acciones{display:flex;gap:.8rem;flex-wrap:wrap}
-.pieza{display:flex;flex-direction:column-reverse;align-items:center;gap:3px;min-height:340px;justify-content:flex-start}
-.capa{height:14px;border-radius:7px;background:var(--filamento);width:calc(var(--w) * 1%);opacity:0;animation:imprimir .35s ease-out forwards;animation-delay:calc(var(--i) * 90ms)}
-.capa:nth-child(3n){background:var(--filamento-oscuro)}
-@keyframes imprimir{from{opacity:0;transform:scaleX(.2)}to{opacity:1;transform:scaleX(1)}}
+.inicio .logo-grande{width:min(420px,100%);margin-inline:auto}
+.datos{border-block:1px solid var(--linea);padding:1.1rem 0}
+.datos .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-weight:500;font-size:.92rem;color:var(--marino)}
 
-/* Cifras / Conócenos */
-.nosotros{background:var(--tinta);color:var(--blanco)}
-.nosotros .sub{color:#B8C4CC}
-.cifras{display:flex;gap:3rem;flex-wrap:wrap;margin-top:2.2rem}
-.cifras strong{font-family:var(--titulos);font-size:2.4rem;display:block;color:var(--filamento)}
-.cifras span{color:#B8C4CC;font-size:.95rem}
+/* Tarjetas */
+.rejilla{display:grid;gap:1.2rem}
+.g4{grid-template-columns:repeat(4,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.tarjeta{background:var(--blanco);border:1px solid var(--linea);border-top:4px solid var(--medio);border-radius:10px;padding:1.5rem}
+.tarjeta .linea{display:block;margin-top:.9rem;font-weight:500;font-size:.88rem;color:var(--medio)}
+.tarjeta p{font-size:.93rem}
+.num{font-weight:700;font-size:2rem;color:var(--grisaceo);line-height:1;margin-bottom:.6rem;display:block}
 
-/* Formas de trabajar */
-.formas{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2rem}
-.forma{background:var(--blanco);border-left:5px solid var(--filamento);padding:1.6rem;border-radius:4px 16px 16px 4px}
-.forma:nth-child(2){border-color:var(--naranja)}
-.forma:nth-child(3){border-color:var(--tinta)}
-.forma h3{font-size:1.25rem;margin-bottom:.5rem}
-.forma p{color:var(--gris);font-size:.97rem}
+/* Máquinas */
+.maquinas{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.maq{background:var(--blanco);border:1px solid var(--linea);border-radius:10px;overflow:hidden}
+.maq .foto{aspect-ratio:4/3;background:var(--suave);display:grid;place-items:center;font-size:.85rem;color:var(--gris)}
+.maq .foto img{width:100%;height:100%;object-fit:cover}
+.maq figcaption{padding:.9rem 1.1rem;font-size:.9rem}
+.maq figcaption strong{display:block;color:var(--marino);font-weight:700}
 
-/* Catálogo */
-.filtros{display:flex;gap:.5rem;flex-wrap:wrap;margin:1.6rem 0 2rem}
-.filtro{font:inherit;font-weight:500;cursor:pointer;padding:.5rem 1.1rem;border-radius:999px;border:2px solid var(--linea);background:var(--blanco);color:var(--tinta)}
-.filtro[aria-pressed="true"]{background:var(--tinta);border-color:var(--tinta);color:var(--blanco)}
-.catalogo{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1.4rem}
-.producto{background:var(--blanco);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;border:1px solid var(--linea)}
-.foto{aspect-ratio:4/3;background:repeating-linear-gradient(0deg,#DDE5E3 0 6px,#E9EFED 6px 12px);display:grid;place-items:center;color:var(--gris);font-size:.85rem}
-.foto img{width:100%;height:100%;object-fit:cover;display:block}
-.info{padding:1.2rem;display:flex;flex-direction:column;gap:.4rem;flex:1}
-.info h3{font-size:1.15rem}
-.info p{color:var(--gris);font-size:.93rem;flex:1}
-.precio{font-weight:700;font-size:1.1rem;margin:.3rem 0 .6rem}
-.info .btn{text-align:center;padding:.65rem 1rem;font-size:.95rem}
+/* Nosotros */
+.dos{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.mv{display:grid;gap:1rem}
+.mv div{border-left:4px solid var(--medio);padding-left:1.1rem}
+.valores{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;margin-top:2.5rem}
+.valores div{border-top:2px solid var(--gris);padding-top:.8rem;font-size:.9rem}
+.valores strong{display:block;color:var(--marino);font-weight:700}
 
 /* Contacto */
-.contacto{background:var(--filamento-oscuro);color:var(--blanco);text-align:center}
-.contacto .sub{color:#CFEDE9;margin-inline:auto;margin-bottom:1.8rem}
-footer{padding:2rem 0;font-size:.9rem;color:var(--gris)}
-footer .contenedor{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.contacto{background:var(--marino);color:var(--blanco)}
+.contacto h2{color:var(--blanco)}
+.contacto .sub{color:var(--blanco)}
+.contacto .regla::before{background:var(--grisaceo)}
+.contacto .regla span{color:var(--grisaceo)}
+.cajas{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin:2rem 0}
+.caja{border:1px solid var(--grisaceo);border-radius:10px;padding:1.4rem}
+.caja h3{color:var(--blanco);font-weight:500;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem}
+.caja .tel{font-weight:700;font-size:1.35rem;text-decoration:none;display:block}
+.caja p{font-size:.92rem;margin-top:.3rem;color:var(--blanco)}
+footer{padding:1.8rem 0;font-size:.88rem}
+footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+footer img{height:38px;width:auto}
 
-@media (max-width:820px){
-  .intro .contenedor{grid-template-columns:1fr}
-  .pieza{min-height:220px;order:-1}
-  .formas{grid-template-columns:1fr}
-  section{padding:3.5rem 0}
+@media (max-width:900px){
+  .inicio .wrap,.dos{grid-template-columns:1fr}
+  .g4,.valores{grid-template-columns:repeat(2,1fr)}
+  .g3,.maquinas,.cajas{grid-template-columns:1fr}
+  .logo-grande{order:-1;width:min(300px,80%)!important}
+  section{padding:3.2rem 0}
 }
-@media (prefers-reduced-motion:reduce){
-  .capa{animation:none;opacity:1}
-  html{scroll-behavior:auto}
-  .btn{transition:none}
-}
+@media (max-width:520px){.g4,.valores{grid-template-columns:1fr}nav a:not(.btn){display:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
 </style>
 </head>
 <body>
 
 <header>
-  <div class="contenedor barra">
-    <a class="logo" href="#inicio" id="nombre-logo">Tu Marca 3D</a>
+  <div class="wrap barra">
+    <a class="marca" href="#inicio" aria-label="Arquiprint Perú 3D, inicio">
+      <img src="img/isotipo.png" alt="" width="36" height="44">
+      <img src="img/logotipo.png" alt="Arquiprint Perú 3D" width="142" height="30">
+    </a>
     <nav aria-label="Principal">
-      <a href="#inicio">Inicio</a>
-      <a href="#servicios">Servicios</a>
-      <a href="#catalogo">Catálogo</a>
+      <a href="#lineas">Líneas de trabajo</a>
+      <a href="#proceso">Cómo trabajamos</a>
+      <a href="#maquinas">Máquinas</a>
+      <a href="#nosotros">Nosotros</a>
       <a href="#contacto">Contacto</a>
+      <a class="btn btn-wa" href="#" data-wa="Hola, quiero cotizar un proyecto de impresión 3D con Arquiprint Perú 3D.">Cotizar</a>
     </nav>
   </div>
 </header>
 
 <main>
-  <section class="intro" id="inicio">
-    <div class="contenedor">
+  <section class="inicio" id="inicio">
+    <div class="wrap">
       <div>
-        <h1>Lo que imaginas, impreso en 3D.</h1>
-        <p>Repuestos, organizadores, prototipos y regalos personalizados. Cuéntanos tu idea y te cotizamos por WhatsApp.</p>
+        <h1>Convertimos tu diseño en una pieza real, capa a capa.</h1>
+        <p>Impresión 3D de maquetas, prototipos y piezas funcionales, con atención cercana y resultados precisos. Enviamos a todo el Perú.</p>
         <div class="acciones">
-          <a class="btn btn-wa" href="#" data-wa="Hola, quiero cotizar una impresión 3D.">Cotizar por WhatsApp</a>
-          <a class="btn btn-borde" href="#catalogo">Ver catálogo</a>
+          <a class="btn btn-wa" href="#" data-wa="Hola, quiero cotizar un proyecto de impresión 3D con Arquiprint Perú 3D.">Cotizar por WhatsApp</a>
+          <a class="btn btn-s" href="#maquinas">Ver máquinas</a>
         </div>
       </div>
-      <div class="pieza" id="pieza" aria-hidden="true"></div>
+      <img class="logo-grande" src="img/imagotipo-vertical.png" alt="Arquiprint Perú 3D, soluciones en fabricación aditiva" width="1000" height="961">
     </div>
   </section>
 
-  <section class="nosotros" id="nosotros">
-    <div class="contenedor">
-      <h2>Quiénes somos</h2>
-      <p class="sub">Somos un emprendimiento de impresión 3D en Lima. Imprimimos con cuidado, avisamos cada avance y entregamos a tiempo. (Cambia este texto por tu historia.)</p>
-      <div class="cifras">
-        <div><strong>PLA · PETG</strong><span>Materiales disponibles</span></div>
-        <div><strong>24–72 h</strong><span>Tiempo de entrega típico</span></div>
-        <div><strong>A medida</strong><span>Diseños propios o tuyos</span></div>
+  <div class="datos">
+    <div class="wrap">
+      <span>Taller en Lima, Perú</span>
+      <span>Envíos a todo el Perú</span>
+      <span>Cotizaciones por WhatsApp</span>
+    </div>
+  </div>
+
+  <section id="lineas">
+    <div class="wrap">
+      <div class="regla"><span>Líneas de trabajo</span></div>
+      <h2>Un solo taller para cualquier necesidad</h2>
+      <p class="sub">Desde un regalo personalizado hasta una pieza funcional para una máquina. Estas son las líneas que más trabajamos.</p>
+      <div class="rejilla g4">
+        <article class="tarjeta"><h3>Arquitectura y estudiantes</h3><p>Maquetas precisas y prototipos para presentar, entregar o validar un diseño.</p><span class="linea">Maquetas de arquitectura</span></article>
+        <article class="tarjeta"><h3>Industria y talleres</h3><p>Piezas funcionales, repuestos y prototipos para mantener y mejorar tus equipos.</p><span class="linea">Piezas para la industria</span></article>
+        <article class="tarjeta"><h3>Emprendedores y empresas</h3><p>Productos con identidad propia, hechos con el diseño y el acabado que necesita tu marca.</p><span class="linea">Merchandising y accesorios</span></article>
+        <article class="tarjeta"><h3>Hogar y regalos</h3><p>Objetos decorativos y personalizados para regalar o para tu espacio.</p><span class="linea">Luminarias, maceteros y accesorios</span></article>
       </div>
     </div>
   </section>
 
-  <section id="servicios">
-    <div class="contenedor">
-      <h2>Tres formas de trabajar con nosotros</h2>
-      <p class="sub">Elige la que se parezca a lo que necesitas.</p>
-      <div class="formas">
-        <article class="forma"><h3>Elige del catálogo</h3><p>Productos listos para imprimir y entregar. Escoge color y recibe tu pedido.</p></article>
-        <article class="forma"><h3>Envíanos tu archivo</h3><p>Ya tienes un modelo STL. Lo revisamos, lo imprimimos y te damos el precio.</p></article>
-        <article class="forma"><h3>Diseñamos contigo</h3><p>No tienes modelo. Dinos qué necesitas y lo modelamos y probamos antes de imprimir.</p></article>
+  <section class="alt" id="proceso">
+    <div class="wrap">
+      <div class="regla"><span>Cómo trabajamos</span></div>
+      <h2>Tres formas de empezar</h2>
+      <p class="sub">Elige la que se parezca a lo que necesitas. Te acompañamos en todo el proceso.</p>
+      <div class="rejilla g3">
+        <article class="tarjeta"><span class="num">01</span><h3>Envíanos tu archivo</h3><p>Si ya tienes un modelo en STL, lo revisamos y te confirmamos medidas, plazo y precio.</p></article>
+        <article class="tarjeta"><span class="num">02</span><h3>Diseñamos contigo</h3><p>Si solo tienes la idea, la modelamos contigo y la probamos antes de imprimir.</p></article>
+        <article class="tarjeta"><span class="num">03</span><h3>Repuestos a medida</h3><p>Envíanos la pieza o una foto con sus medidas y la fabricamos para ti.</p></article>
       </div>
     </div>
   </section>
 
-  <section id="catalogo">
-    <div class="contenedor">
-      <h2>Catálogo</h2>
-      <p class="sub">Toca "Pedir por WhatsApp" en cualquier producto y el mensaje sale escrito.</p>
-      <div class="filtros" id="filtros" role="group" aria-label="Filtrar por categoría"></div>
-      <div class="catalogo" id="catalogo-lista"></div>
+  <section id="maquinas">
+    <div class="wrap">
+      <div class="regla"><span>Galería de máquinas</span></div>
+      <h2>Equipos listos para cualquier proyecto</h2>
+      <p class="sub">Contamos con una galería de máquinas disponibles para fabricar desde piezas pequeñas hasta proyectos de mayor escala.</p>
+      <!-- Para añadir tu foto: reemplaza el texto del div.foto por <img src="img/maquina-1.jpg" alt="Descripción"> y edita el nombre. -->
+      <div class="maquinas">
+        <figure class="maq"><div class="foto">Foto próximamente</div><figcaption><strong>Impresora 3D</strong>Modelo y área de impresión</figcaption></figure>
+        <figure class="maq"><div class="foto">Foto próximamente</div><figcaption><strong>Impresora 3D</strong>Modelo y área de impresión</figcaption></figure>
+        <figure class="maq"><div class="foto">Foto próximamente</div><figcaption><strong>Impresora 3D</strong>Modelo y área de impresión</figcaption></figure>
+        <figure class="maq"><div class="foto">Foto próximamente</div><figcaption><strong>Impresora 3D</strong>Modelo y área de impresión</figcaption></figure>
+        <figure class="maq"><div class="foto">Foto próximamente</div><figcaption><strong>Impresora 3D</strong>Modelo y área de impresión</figcaption></figure>
+        <figure class="maq"><div class="foto">Foto próximamente</div><figcaption><strong>Impresora 3D</strong>Modelo y área de impresión</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt" id="nosotros">
+    <div class="wrap">
+      <div class="regla"><span>Nosotros</span></div>
+      <div class="dos">
+        <div>
+          <h2>Del diseño digital a la pieza física</h2>
+          <p>Arquiprint Perú 3D es una empresa de impresión 3D y fabricación aditiva en el Perú. Convertimos diseños digitales en piezas físicas: maquetas, prototipos y piezas funcionales, con atención cercana y resultados precisos.</p>
+        </div>
+        <div class="mv">
+          <div><h3>Misión</h3><p>Hacer accesible la fabricación aditiva en el Perú, convirtiendo diseños digitales en piezas físicas precisas para quienes crean, construyen y estudian.</p></div>
+          <div><h3>Visión</h3><p>Ser una referencia peruana en fabricación aditiva, reconocida por la precisión y la confiabilidad de su trabajo.</p></div>
+        </div>
+      </div>
+      <div class="valores">
+        <div><strong>Precisión</strong>Cuidamos cada detalle, del diseño al acabado.</div>
+        <div><strong>Versatilidad</strong>Aceptamos retos distintos, sin límite de rubro.</div>
+        <div><strong>Creatividad</strong>Proponemos soluciones, no solo imprimimos archivos.</div>
+        <div><strong>Cercanía</strong>Te acompañamos en todo el proceso.</div>
+        <div><strong>Compromiso</strong>Cumplimos plazos y calidad en cada entrega.</div>
+      </div>
     </div>
   </section>
 
   <section class="contacto" id="contacto">
-    <div class="contenedor">
-      <h2>¿Tienes una idea en mente?</h2>
-      <p class="sub">Escríbenos y te respondemos con una cotización.</p>
-      <a class="btn btn-wa" href="#" data-wa="Hola, tengo una idea y quiero que me ayuden a imprimirla.">Escribir por WhatsApp</a>
+    <div class="wrap">
+      <div class="regla"><span>Contacto</span></div>
+      <h2>Cuéntanos tu proyecto</h2>
+      <p class="sub">Envíanos tu archivo o tu idea y te confirmamos medidas y plazo.</p>
+      <div class="cajas">
+        <div class="caja"><h3>Ventas y cotizaciones</h3><a class="tel" href="tel:+51959778809">+51 959 778 809</a><p>Llamadas y WhatsApp.</p></div>
+        <div class="caja"><h3>Contabilidad</h3><a class="tel" href="tel:+51914645760">+51 914 645 760</a><p>Facturación y consultas administrativas.</p></div>
+        <div class="caja"><h3>Ubicación y envíos</h3><span class="tel">Lima, Perú</span><p>Enviamos a todo el Perú.</p></div>
+      </div>
+      <div class="acciones">
+        <a class="btn btn-wa" href="#" data-wa="Hola, tengo un proyecto y quiero que me ayuden a fabricarlo con Arquiprint Perú 3D.">Escribir por WhatsApp</a>
+        <a class="btn btn-o" href="tel:+51959778809">Llamar a ventas</a>
+      </div>
     </div>
   </section>
 </main>
 
 <footer>
-  <div class="contenedor">
-    <span id="pie">© 2026 Tu Marca 3D — Lima, Perú</span>
-    <span><a href="https://www.instagram.com/" id="instagram">Instagram</a></span>
+  <div class="wrap">
+    <img src="img/isotipo.png" alt="Arquiprint Perú 3D" width="31" height="38">
+    <span>© 2026 Arquiprint Perú 3D — Lima, Perú</span>
   </div>
 </footer>
 
 <script>
-/* ====== EDITA SOLO ESTA PARTE ====== */
-const CONFIG = {
-  nombre: "Tu Marca 3D",
-  whatsapp: "51999999999",              // código de país + número, sin + ni espacios
-  instagram: "https://www.instagram.com/tu_usuario"
-};
-
-/* Un producto por bloque. "imagen": ruta de tu foto, por ejemplo "img/soporte.jpg".
-   Si la dejas vacía, se muestra un recuadro gris. */
-const PRODUCTOS = [
-  { nombre: "Soporte de celular", categoria: "Hogar y oficina", precio: "S/ 15", descripcion: "Para escritorio, ángulo ajustable. Varios colores.", imagen: "" },
-  { nombre: "Organizador de cables", categoria: "Hogar y oficina", precio: "S/ 12", descripcion: "Mantiene tus cables ordenados en la mesa.", imagen: "" },
-  { nombre: "Llavero personalizado", categoria: "Regalos", precio: "S/ 8", descripcion: "Con el nombre o logo que tú elijas.", imagen: "" },
-  { nombre: "Maceta geométrica", categoria: "Regalos", precio: "S/ 25", descripcion: "Diseño de capas, ideal para suculentas.", imagen: "" },
-  { nombre: "Figura articulada", categoria: "Figuras y juegos", precio: "S/ 30", descripcion: "Se mueve y se arma sin pegamento.", imagen: "" },
-  { nombre: "Repuesto a medida", categoria: "Repuestos", precio: "Cotizar", descripcion: "Perillas, tapas y piezas. Envíanos la pieza o una foto.", imagen: "" }
-];
-/* ====== FIN DE LO QUE EDITAS ====== */
-
-const wa = t => "https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent(t);
-
-document.querySelectorAll("[data-wa]").forEach(a => a.href = wa(a.dataset.wa));
-document.getElementById("nombre-logo").textContent = CONFIG.nombre;
-document.getElementById("pie").textContent = "© 2026 " + CONFIG.nombre + " — Lima, Perú";
-document.getElementById("instagram").href = CONFIG.instagram;
-document.title = CONFIG.nombre + " — Impresión 3D en Lima";
-
-/* Pieza que se imprime por capas */
-const pieza = document.getElementById("pieza");
-const anchos = [34,58,70,78,84,88,90,90,88,84,78,70,58,44,30];
-anchos.forEach((w, i) => {
-  const s = document.createElement("span");
-  s.className = "capa";
-  s.style.setProperty("--w", w);
-  s.style.setProperty("--i", i);
-  pieza.appendChild(s);
+/* Número de ventas para los botones de WhatsApp (código de país + número, sin + ni espacios) */
+const WHATSAPP = "51959778809";
+document.querySelectorAll("[data-wa]").forEach(a => {
+  a.href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(a.dataset.wa);
+  a.target = "_blank"; a.rel = "noopener";
 });
-
-/* Catálogo con filtros */
-const lista = document.getElementById("catalogo-lista");
-const filtros = document.getElementById("filtros");
-const categorias = ["Todos", ...new Set(PRODUCTOS.map(p => p.categoria))];
-
-function pintar(cat) {
-  lista.innerHTML = "";
-  PRODUCTOS.filter(p => cat === "Todos" || p.categoria === cat).forEach(p => {
-    const el = document.createElement("article");
-    el.className = "producto";
-    const foto = p.imagen
-      ? '<img src="' + p.imagen + '" alt="' + p.nombre + '" loading="lazy">'
-      : "Foto próximamente";
-    el.innerHTML =
-      '<div class="foto">' + foto + '</div>' +
-      '<div class="info"><h3>' + p.nombre + '</h3><p>' + p.descripcion + '</p>' +
-      '<div class="precio">' + p.precio + '</div>' +
-      '<a class="btn btn-wa" href="' + wa("Hola, me interesa: " + p.nombre + ". ¿Está disponible?") + '">Pedir por WhatsApp</a></div>';
-    lista.appendChild(el);
-  });
-}
-
-categorias.forEach((c, i) => {
-  const b = document.createElement("button");
-  b.className = "filtro";
-  b.textContent = c;
-  b.setAttribute("aria-pressed", i === 0);
-  b.onclick = () => {
-    filtros.querySelectorAll(".filtro").forEach(x => x.setAttribute("aria-pressed", x === b));
-    pintar(c);
-  };
-  filtros.appendChild(b);
-});
-pintar("Todos");
 </script>
 </body>
 </html>
